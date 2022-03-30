@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+input[type="textbox"] {
+  font-size: 3em;
+}
+
+input[type="textbox"]:focus {
+  outline: none;
+  outline: 3px solid salmon;
+  outline-offset: 2px;
+  transition: 0.5s all;
+}
+
+#jod {
+  font-size: 3em;
+}
