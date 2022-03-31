@@ -31,56 +31,30 @@ function randomColor() {
 
 let input = document.querySelector("input[type=textbox]");
 let div = document.querySelector("#jod");
-// input.addEventListener("input", (event) => {
-//   console.log(event);
-//   jod.innerText = input.value;
-//   jod.style.color = randomColor();
-// });
 
-// using Span
-input.addEventListener("input", (event) => {
+// USING CARET
+
+let count = 0;
+let caret;
+input.addEventListener("keydown", (event) => {
   let span = document.createElement("span");
-  console.log(event);
-  if (event.data == null) {
-    div.removeChild(div.lastChild);
-  } else {
-    span.textContent = event.data;
+  span.setAttribute("id", count);
+  // console.log("Key " + event.key);
+  // console.log("Which " + event.which);
+  count++;
+  // console.log(event);
+  caret = event.target.selectionStart;
+  console.log(caret);
+  if (event.which >= 48 && event.which <= 90) {
+    span.textContent = event.key;
     span.style.color = randomColor();
     div.appendChild(span);
+  } else if (event.which == 8) {
+    let allspans = document.querySelectorAll("#jod span");
+    // console.log(allspans[allspans.length - 1]);
+    div.removeChild(allspans[caret - 1]);
   }
+  // else if(event.which ==46 ){
+
+  // }
 });
-
-// With keydown
-// input.addEventListener("keydown", (event) => {
-//   let span = document.createElement("span");
-//   if (event.key != "Backspace") {
-//     span.textContent = event.key;
-//     span.style.color = randomColor();
-//     div.appendChild(span);
-//   } else {
-//     console.log(div.lastChild);
-//   }
-// });
-
-// let wrapper = document.createElement("ul");
-// let child = document.createElement("li");
-// function chnge() {
-//   for (let i = 0; i < 5; i++) {
-//     child.innerText = i;
-//     wrapper.appendChild(child);
-//   }
-//   document.body.append(wrapper);
-// }
-
-// function remove() {
-//   wrapper.removeChild(wrapper.lastElementChild);
-// }
-// chnge();
-
-// let strop = "jaddu";
-// let array = [];
-// for (let i = 0; i < strop.length; i++) {
-//   array.push(strop[i]);
-//   array[i];
-// }
-// console.log(array);
