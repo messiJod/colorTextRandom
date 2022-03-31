@@ -38,15 +38,17 @@ let div = document.querySelector("#jod");
 // });
 
 // using Span
-// input.addEventListener("input", (event) => {
-//   let span = document.createElement("span");
-//   if (event.data == "null") {
-//     div.removeChild(span);
-//   }
-//   span.textContent = event.data;
-//   span.style.color = randomColor();
-//   div.appendChild(span);
-// });
+input.addEventListener("input", (event) => {
+  let span = document.createElement("span");
+  console.log(event);
+  if (event.data == null) {
+    div.removeChild(div.lastChild);
+  } else {
+    span.textContent = event.data;
+    span.style.color = randomColor();
+    div.appendChild(span);
+  }
+});
 
 // With keydown
 // input.addEventListener("keydown", (event) => {
@@ -75,10 +77,10 @@ let div = document.querySelector("#jod");
 // }
 // chnge();
 
-let strop = "jaddu";
-let array = [];
-for (let i = 0; i < strop.length; i++) {
-  array.push(strop[i]);
-  array[i]
-}
-console.log(array);
+// let strop = "jaddu";
+// let array = [];
+// for (let i = 0; i < strop.length; i++) {
+//   array.push(strop[i]);
+//   array[i];
+// }
+// console.log(array);
